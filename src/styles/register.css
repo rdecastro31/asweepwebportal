@@ -1,0 +1,256 @@
+.register-page {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f4fbf6 0%, #ffffff 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  font-family: "Inter", "Segoe UI", Arial, sans-serif;
+}
+
+.register-card {
+  width: 100%;
+  max-width: 520px;
+  background: #ffffff;
+  border-radius: 28px;
+  padding: 38px;
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.1);
+}
+
+.register-logo-area {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 24px;
+}
+
+.register-logo {
+  width: 66px;
+  height: 66px;
+  object-fit: contain;
+  border-radius: 50%;
+  background: #ffffff;
+  padding: 8px;
+  border: 1px solid #e5e7eb;
+  box-shadow:
+    0 4px 12px rgba(0, 0, 0, 0.08),
+    0 0 0 4px rgba(34, 141, 69, 0.08);
+}
+
+.register-heading {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.register-heading h2 {
+  margin: 0 0 8px;
+  color: #1d2939;
+  font-size: 2rem;
+  font-weight: 850;
+}
+
+.register-heading p {
+  margin: 0;
+  color: #667085;
+  font-size: 0.96rem;
+}
+
+.register-stepper {
+  display: flex;
+  align-items: center;
+  margin-bottom: 28px;
+}
+
+.step-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 120px;
+}
+
+.step-item span {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: #e5e7eb;
+  color: #667085;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 850;
+  margin-bottom: 8px;
+}
+
+.step-item p {
+  margin: 0;
+  color: #667085;
+  font-size: 0.78rem;
+  font-weight: 800;
+  text-align: center;
+}
+
+.step-item.active span {
+  background: #228d45;
+  color: #ffffff;
+}
+
+.step-item.active p {
+  color: #228d45;
+}
+
+.step-line {
+  flex: 1;
+  height: 2px;
+  background: #e5e7eb;
+  margin-bottom: 26px;
+}
+
+.register-message {
+  padding: 13px 16px;
+  border-radius: 14px;
+  background: #fff7ed;
+  color: #9a3412;
+  font-size: 0.9rem;
+  font-weight: 700;
+  margin-bottom: 22px;
+}
+
+.register-field {
+  margin-bottom: 20px;
+}
+
+.register-field label {
+  display: block;
+  margin-bottom: 9px;
+  color: #344054;
+  font-size: 0.92rem;
+  font-weight: 800;
+}
+
+.register-input-box {
+  height: 58px;
+  border: 1px solid #d9e4dd;
+  border-radius: 14px;
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  padding: 0 17px;
+  transition: all 0.2s ease;
+}
+
+.register-input-box:focus-within {
+  border-color: #228d45;
+  box-shadow: 0 0 0 4px rgba(34, 141, 69, 0.1);
+}
+
+.register-input-box svg {
+  color: #228d45;
+  font-size: 20px;
+  flex-shrink: 0;
+}
+
+.register-input-box input {
+  flex: 1;
+  height: 100%;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  padding: 0 13px;
+  color: #1d2939;
+  font-size: 0.98rem;
+}
+
+.register-eye-btn {
+  border: 0;
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.register-eye-btn svg {
+  color: #667085;
+}
+
+.register-submit-btn {
+  width: 100%;
+  height: 58px;
+  border: 0;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #228d45, #126f34);
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 850;
+  cursor: pointer;
+  box-shadow: 0 16px 35px rgba(34, 141, 69, 0.24);
+  transition: all 0.2s ease;
+}
+
+.register-submit-btn:hover {
+  transform: translateY(-1px);
+}
+
+.register-submit-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.verified-box {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 16px;
+  border-radius: 18px;
+  background: #f2faf5;
+  border: 1px solid #d8f0e0;
+  margin-bottom: 22px;
+}
+
+.verified-box svg {
+  color: #228d45;
+  font-size: 28px;
+}
+
+.verified-box strong {
+  display: block;
+  color: #1d2939;
+  font-size: 0.96rem;
+}
+
+.verified-box p {
+  margin: 3px 0 0;
+  color: #667085;
+  font-size: 0.88rem;
+  font-weight: 700;
+}
+
+.back-login-link {
+  margin-top: 26px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  color: #228d45;
+  font-size: 0.94rem;
+  font-weight: 850;
+  text-decoration: none;
+}
+
+.back-login-link:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 576px) {
+  .register-card {
+    padding: 30px 22px;
+    border-radius: 22px;
+  }
+
+  .register-heading h2 {
+    font-size: 1.65rem;
+  }
+
+  .step-item {
+    width: 96px;
+  }
+}
