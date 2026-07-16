@@ -1,0 +1,111 @@
+[
+    {
+        "id": 1,
+        "type": "text",
+        "question": "Where can I use my Autosweep RFID?",
+        "answer": "You may use your Autosweep RFID at SLEX, Skyway Stage 1 and 2, Skyway Stage 3, NAIA Expressway, STAR Tollway, TPLEX, and MCX (Muntinlupa-Cavite Expressway)"
+    },
+    {
+        "id": 2,
+        "type": "text",
+        "question": "How and where can I reload my AutoSweep RFID sticker?",
+        "answer": "You may top-up your account at any of our RFID stations or the RFID accredited merchant partners such as:",
+        "imgUrl": "/faq/loading-partners.jpg"
+    },
+    {
+        "id": 3,
+        "type": "html",
+        "question": "How do I check my Autosweep RFID Balance?",
+        "answer": "<div class='faq-inner-card'>\n  <span class='faq-inner-title text-decoration-underline'>VIA SMS</span>\n  <div class='faq-inner-section'>\n    <span class='fw-bold fst-italic text-muted small d-block mb-2'>For Autosweep Premium Accounts:</span>\n    <div class='faq-step-item'>Just Type: <span class='fst-italic fw-bold text-dark'>Autosweep BALINQ PlateNumber</span></div>\n    <div class='faq-step-item'>Example: <span class='fst-italic fw-bold text-dark'>Autosweep BALINQ ABC1234</span></div>\n    <div class='faq-step-item mt-2 text-muted small'>Send to: <span class='fw-bold'>0917-860-8655</span> (Globe) or <span class='fw-bold'>0918-860-8655</span> (Smart)</div>\n  </div>\n  <div class='faq-inner-section'>\n    <span class='fw-bold fst-italic text-muted small d-block mb-2'>For Autosweep RFID To-Go (ATG) Accounts:</span>\n    <div class='faq-step-item'>Just Type: <span class='fst-italic fw-bold text-dark'>Autosweep BALINQ ATGCardNumber</span></div>\n    <div class='faq-step-item'>Example: <span class='fst-italic fw-bold text-dark'>Autosweep BALINQ A123456</span></div>\n    <div class='faq-step-item mt-2 text-muted small'>Send to: <span class='fw-bold'>0917-860-8655</span> (Globe) or <span class='fw-bold'>0918-860-8655</span> (Smart)</div>\n  </div>\n</div>\n\n<div class='faq-inner-card'>\n  <span class='faq-inner-title text-decoration-underline'>VIA WEBSITE</span>\n  <div class='faq-step-item'>1. Navigate to the <span class='fw-bold'>Home</span> screen view using the main navigation panel.</div>\n  <div class='faq-step-item'>2. Locate your target <span class='fw-bold'>Account Number</span> card selector.</div>\n  <div class='faq-step-item'>3. Your active available wallet balance will automatically populate alongside your account profile view.</div>\n</div>\n\n<div class='faq-inner-card'>\n  <span class='faq-inner-title text-decoration-underline'>VIA MOBILE APP</span>\n  <div class='faq-step-item'>1. Open your target platform app storefront and download the official application utility module.</div>\n  \n  <div class='faq-app-badges'>\n    <a class='faq-badge-link google-play' href='https://play.google.com/store/apps/details?id=com.balanceinquiry&hl=en&gl=US' target='_blank'>\n      <img alt='Get it on Google Play' src='https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png'/>\n    </a>\n    <a class='faq-badge-link apple-store' href='https://apps.apple.com/ph/app/autosweep-mobile-app/id6759019593' target='_blank'>\n      <img alt='Download on the App Store' src='https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83'/>\n    </a>\n  </div>\n\n  <div class='faq-step-item'>2. Select register options, then append your verified Account Number plus identifier criteria tags.</div>\n  <div class='faq-step-item'>3. Secure login credentials will automatically deliver via registration confirmation emails.</div>\n  <p class='text-muted small fst-italic mt-3 mb-0' style='font-size: 0.75rem;'>Google Play and the Google Play logo are trademarks of Google LLC.</p>\n</div>"
+    },
+    {
+        "id": 4,
+        "type": "text",
+        "question": "Does the Autosweep RFID load expire?",
+        "answer": "No. The Autosweep RFID load has no expiration."
+    },
+    {
+        "id": 5,
+        "type": "html",
+        "question": "Is there a maintaining balance?",
+        "answer": "To avoid inconvenience, we highly encourage you to maintain a threshold of at least <span class='fw-bold text-success'>Php 100.00</span> inside active balances when approaching dedicated toll access processing structures."
+    },
+    {
+        "id": 6,
+        "type": "html",
+        "question": "How do I get my Statement of Account (SOA)?",
+        "answer": "<div class='faq-inner-card'>\n  <div class='faq-step-item'>1. Access your primary portal interface dashboard layout views.</div>\n  <div class='faq-step-item'>2. Pinpoint the specific account instance registry tracking card module.</div>\n  <div class='faq-step-item'>3. Choose the <span class='fw-bold'>\"Download SOA\"</span> operation option to toggle document settings overlay views.</div>\n  <div class='faq-step-item'>4. Fine-tune boundaries using date picker tools (<span class='fst-italic text-muted'>Date From / Date To</span> settings targets).</div>\n  <div class='faq-step-item'>5. Confirm parameters using the primary <span class='fw-bold'>\"Generate\"</span> button control element.</div>\n  <div class='faq-step-item'>6. Your file system will automatically capture the generated file export instance safely.</div>\n</div>"
+    },
+    {
+        "id": 7,
+        "type": "text",
+        "question": "Do I also get an official receipt if I reload through the Autosweep RFID Merchant Partners?",
+        "answer": "Yes. All top-ups made through our Merchant partners will be issued an Official Receipt (OR). The OR will be sent to the registered email (provided during enrollment) the following day. If you do not receive an OR, please contact the Autosweep RFID Customer Care Hotline and report the problem."
+    },
+    {
+        "id": 8,
+        "type": "text",
+        "question": "Can I enroll all my cars in one account? What is the advantage?",
+        "answer": "If you have an Autosweep Premium account, you may enroll all your vehicles in one account and the load is shared by all vehicles. For Autosweep RFID To-Go (ATG) accounts, it is strictly 1 vehicle per account."
+    },
+    {
+        "id": 9,
+        "type": "text",
+        "question": "Can I enroll my account in Auto Debit Arrangement (ADA)?",
+        "answer": "Please Fill up the Authority to Charge form and submit it along with the photocopy of your valid ID and the front of your credit card.\n\nIf you have an Autosweep To Go (ATG) account, please also submit a copy of the OR and CR of your vehicle, picture of the RFID Sticker and Card assigned to the vehicle and fill out a Autosweep Premium Personal Form. You may get the form from our existing Autosweep RFID stations or download it through our website: www.autosweeprfid.com. The forms and requirements may also be emailed to customercare@autosweeprfid.com.\n\nPlease remember that any changes in your ADA enrollment (particularly in the change of your card expiry date) will require the submission of a new ADA form."
+    },
+    {
+        "id": 10,
+        "type": "text",
+        "question": "How do I convert from Autosweep To Go (ATG) to Premium?",
+        "answer": "Please bring your vehicle to any of our RFID CENTERS and submit a valid ID and the OR and CR of your vehicle ((if you are not the registered owner, please attach an authorization from the registered owner and photocopy of his ID or copy of the deed of sale)."
+    },
+    {
+        "id": 11,
+        "type": "text",
+        "question": "Can I have my sticker replaced?",
+        "answer": "Yes, you could have your RFID sticker replaced if it is unreadable or if it is already damaged. Please bring your vehicle to any of our RFID stations so we can check on the condition of your sticker and replace if needed."
+    },
+    {
+        "id": 12,
+        "type": "text",
+        "question": "Can I have my RFID card replaced?",
+        "answer": "Yes, you can have your RFID card replaced by bringing your vehicle to any of our customer service centers."
+    },
+    {
+        "id": 13,
+        "type": "text",
+        "question": "I entered the incorrect Account Number/Plate Number/ATG Card Number when I reloaded my Autosweep RFID account. How do I get my reload or money back?",
+        "answer": "Please contact the merchant partner you reloaded from to request for reversal of the transaction."
+    },
+    {
+        "id": 14,
+        "type": "text",
+        "question": "If I sell my car with Autosweep RFID, what do I do with the Autosweep RFID sticker installed in the car?",
+        "answer": "If you sell your car with an Autosweep RFID sticker, you must remove the sticker and surrender the assigned Autosweep RFID card along with duly filled up Customer Request form requesting for the cancellation of your Autosweep RFID sticker and Autosweep RFID card. Otherwise, the toll charges incurred by the Autosweep RFID sticker will be charged to the account holder. Please note that you will need to submit an ADA (Auto Debit Arrangement) Cancellation form if your vehicle was previously enrolled to ADA.\n\nYou may download the Customer request from through our website: www.autosweeprfid.com or you may visit any of our Autosweep RFID stations to get the form."
+    },
+    {
+        "id": 15,
+        "type": "text",
+        "question": "Can I transfer the balance of my cancelled RFID account to my other RFID account?",
+        "answer": "Yes. You may request for the transfer of your remaining balance to your other existing account. You must fill up the Balance Transfer request form available in our website. You may email it together with your valid ID and a photo of the back of the RFID cards to customercare@autosweeprfid.com or submit it at any of our RFID stations."
+    },
+    {
+        "id": 16,
+        "type": "text",
+        "question": "Can I use my Easytrip sticker in SMC Toll Roads?",
+        "answer": "Yes, the Easytrip sticker can be linked to Autosweep. Please visit our customer service center to have the sticker linked. We will assign a separate Autosweep RFID account for your vehicle. You will have to maintain two accounts, one for SMC Tollways and one for MPTC Toll Roads."
+    },
+    {
+        "id": 17,
+        "type": "text",
+        "question": "How do I link my Autosweep RFID sticker with Easytrip (NLEX, SCTEX, CAVITEX, CALAX ,C5 SOUTHLINK)?",
+        "answer": "Please proceed to any Easytrip Office and apply for an account with them. Using the Autosweep sticker, Easytrip will assign an Easytrip account for your vehicle. You will have to maintain two accounts, one for SMC Tollways and one for MPTC Toll Roads."
+    },
+    {
+        "id": 18,
+        "type": "text",
+        "question": "Where can I inquire if I have further questions regarding the Autosweep RFID Program?",
+        "answer": "You may contact our Autosweep hotline anytime at (+632) 5318-TOLL (8655) or visit our website at www.autosweeprfid.com; or email us at customercare@autosweeprfid.com."
+    }
+]

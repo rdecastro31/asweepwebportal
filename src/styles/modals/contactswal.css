@@ -1,0 +1,131 @@
+/* Container Backdrop Overlay */
+.swal-contact-container {
+  background: rgba(15, 23, 42, 0.3) !important;
+  backdrop-filter: blur(4px);
+  z-index: 99999 !important;
+}
+
+/* Panel Body Base Style */
+.swal-contact-popup {
+  background: #ffffff !important;
+  border-radius: 22px !important;
+  padding: 32px !important;
+  border: 1px solid #edf2ef !important;
+  box-shadow: 0 20px 48px rgba(15, 23, 42, 0.08) !important;
+  width: 100% !important;
+  max-width: 480px !important;
+  font-family: inherit !important;
+}
+
+/* Reset inner default sweetalert spaces */
+.swal-contact-html-container {
+  padding: 0 !important;
+  margin: 0 !important;
+  text-align: left !important;
+  overflow: visible !important;
+}
+
+/* Layout Header Styles inside Sweetalert */
+.contact-swal-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.contact-swal-header .icon-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.contact-swal-header .icon-wrapper.success {
+  color: var(--as-primary, #228d45);
+}
+
+.contact-swal-header .icon-wrapper.error {
+  color: #dc2626; /* Crimson Red for Error State */
+}
+
+.contact-swal-header .text-block h2 {
+  font-size: 1.4rem;
+  font-weight: 850;
+  color: var(--as-text);
+  margin: 0 0 6px 0;
+}
+
+.contact-swal-header .text-block p {
+  font-size: 0.88rem;
+  color: #64748b;
+  margin: 0;
+  line-height: 1.4;
+}
+
+/* Metadata Selection Summary Badge */
+.contact-swal-summary-badge {
+  display: flex;
+  gap: 12px;
+  background: #f1f5f9;
+  padding: 10px 14px;
+  border-radius: 10px;
+  font-size: 0.85rem;
+  color: var(--as-text);
+  margin-bottom: 16px;
+  border: 1px solid #e2e8f0;
+}
+
+/* Action block layout adjustments */
+.swal-contact-actions {
+  display: flex !important;
+  flex-direction: row !important;
+  gap: 12px !important;
+  margin-top: 24px !important;
+  width: 100%;
+}
+
+.swal-contact-actions button {
+  margin: 0 !important;
+}
+
+/* Confirm / Action Buttons */
+.swal-contact-confirm-btn {
+  height: 46px;
+  border: 0;
+  border-radius: 14px;
+  padding: 0 18px;
+  color: #ffffff !important;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-size: 0.88rem;
+  font-weight: 850;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.2s ease;
+  width: 100%;
+}
+
+/* Variant Success Color Scheme */
+.swal-contact-container .success-theme-btn {
+  background: var(--as-primary, #228d45) !important;
+}
+.swal-contact-container .success-theme-btn:hover {
+  background: var(--as-primary-dark, #1a6d34) !important;
+}
+
+/* Variant Error Color Scheme */
+.swal-contact-container .error-theme-btn {
+  background: #dc2626 !important;
+}
+.swal-contact-container .error-theme-btn:hover {
+  background: #b91c1c !important;
+}
+
+@media (max-width: 440px) {
+  .swal-contact-actions {
+    flex-direction: column !important;
+    gap: 10px !important;
+  }
+}

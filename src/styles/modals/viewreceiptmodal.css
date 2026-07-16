@@ -1,0 +1,143 @@
+/* Modal Context Overlay */
+.receipt-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(15, 23, 42, 0.3);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  animation: receiptFadeIn 0.2s ease-out;
+}
+
+/* Inherited Panel Aesthetic - Expanded dimensions tailored for documents */
+.receipt-modal-panel {
+  position: relative;
+  background: #ffffff;
+  border-radius: 22px;
+  padding: 32px;
+  border: 1px solid #edf2ef;
+  box-shadow: 0 20px 48px rgba(15, 23, 42, 0.08);
+  width: 100%;
+  max-width: 720px; /* Optimized reading layout grid width */
+  height: 85vh; /* Fixed viewport boundary limitation */
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+  animation: receiptSlideUp 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.receipt-modal-close-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: transparent;
+  border: 0;
+  color: var(--as-text);
+  opacity: 0.4;
+  cursor: pointer;
+  padding: 6px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.15s ease;
+}
+
+.receipt-modal-close-btn:hover {
+  opacity: 0.9;
+  background: #edf2ef;
+}
+
+.receipt-section-header h2 {
+  font-size: 1.4rem;
+  font-weight: 850;
+  color: var(--as-text);
+  margin: 0 0 6px 0;
+}
+
+.receipt-section-header p {
+  font-size: 0.88rem;
+  color: #64748b;
+  margin: 0 0 16px 0;
+  line-height: 1.4;
+}
+
+/* Document Display Box Block */
+.receipt-viewer-container {
+  flex: 1;
+  background: #f8fafc;
+  border: 1px solid var(--as-border);
+  border-radius: 14px;
+  margin-top: 16px;
+  overflow: hidden;
+  position: relative;
+}
+
+.receipt-pdf-frame {
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.receipt-viewer-loader {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #64748b;
+  font-size: 0.9rem;
+}
+
+/* Action button configuration stretching across modal footer width */
+.receipt-download-btn {
+  height: 46px;
+  border: 0;
+  border-radius: 14px;
+  padding: 0 18px;
+  background: var(--as-primary);
+  color: #ffffff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  font-size: 0.88rem;
+  font-weight: 850;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.2s ease;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.receipt-download-btn:hover {
+  background: var(--as-primary-dark);
+  transform: translateY(-1px);
+}
+
+.receipt-download-btn:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+@keyframes receiptFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes receiptSlideUp {
+  from {
+    transform: translateY(12px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+  }
+}

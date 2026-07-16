@@ -1,5 +1,11 @@
+/* ==========================================
+   PAGE ROOT SETUP
+========================================== */
 .portal-page {
-  min-height: 100vh;
+  /* Force container to match viewport precisely and lock outer scrolling */
+  height: 100vh;
+  max-height: 100vh;
+  overflow: hidden;
   background: #f7faf8;
   display: flex;
   flex-direction: column;
@@ -8,7 +14,6 @@
 /* ==========================================
    HEADER
 ========================================== */
-
 .portal-header {
   height: 78px;
   background: #ffffff;
@@ -17,9 +22,11 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  position: sticky;
-  top: 0;
+  /* Since outer overflow is locked, layout flex handles pinning naturally */
+  position: relative;
   z-index: 999;
+  box-sizing: border-box;
+  flex-shrink: 0; /* Prevents header from collapsing */
 }
 
 .portal-brand {
@@ -50,7 +57,6 @@
 /* ==========================================
    HEADER ACTIONS
 ========================================== */
-
 .portal-header-actions {
   display: flex;
   align-items: center;
@@ -105,74 +111,124 @@
 /* ==========================================
    BODY
 ========================================== */
-
 .portal-body {
   flex: 1;
   display: flex;
+  min-height: 0; /* CRITICAL: Enables child elements to compute overflow and shrink correctly */
+  overflow: hidden;
 }
 
 /* ==========================================
-   SIDEBAR
+   PORTAL SIDEBAR
 ========================================== */
-
 .portal-sidebar {
   width: 260px;
   background: #ffffff;
-  border-right: 1px solid #e7efe9;
+  border-right: 1px solid var(--as-border);
   padding: 24px 16px;
-}
-
-.portal-sidebar nav {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  /* Updated to take the remaining height inside portal-body dynamically */
+  height: 100%;
+  box-sizing: border-box;
+  flex-shrink: 0; /* Prevents sidebar width compression */
 }
 
+.portal-sidebar .sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+/* Sidebar Groups & Typography Headers */
+.sidebar-group {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.sidebar-group-title {
+  color: var(--as-muted);
+  font-size: 0.72rem;
+  font-weight: 850;
+  letter-spacing: 0.06em;
+  padding: 10px 14px 6px;
+  user-select: none;
+}
+
+/* Structural Divider */
+.sidebar-divider {
+  height: 1px;
+  background-color: var(--as-border);
+  margin: 12px 14px;
+  opacity: 0.75;
+}
+
+/* Navigation Links Styling */
 .portal-sidebar a {
   display: flex;
   align-items: center;
   gap: 12px;
   text-decoration: none;
-  color: #475569;
-  font-weight: 600;
+  color: var(--as-text);
+  font-size: 0.9rem;
   padding: 13px 15px;
-  border-radius: 14px;
+  border-radius: 16px;
   transition: all 0.2s ease;
 }
 
 .portal-sidebar a svg {
-  font-size: 1.1rem;
+  font-size: 1.15rem;
+  flex-shrink: 0;
+  transition: transform 0.2s ease;
 }
 
+/* Hover States */
 .portal-sidebar a:hover {
-  background: #f0fff5;
-  color: #228d45;
+  background: var(--as-primary-soft-2);
+  color: var(--as-primary);
 }
 
+.portal-sidebar a:hover svg {
+  transform: scale(1.05);
+}
+
+/* Active Navigation Route Matching Dashboard Hero Gradient */
 .portal-sidebar a.active {
   background: linear-gradient(
     135deg,
-    #228d45,
-    #176a33
+    var(--as-primary),
+    var(--as-primary-dark)
   );
   color: #ffffff;
-  box-shadow: 0 8px 18px rgba(34, 141, 69, 0.25);
+  box-shadow: 0 10px 24px rgba(34, 141, 69, 0.22);
+  font-weight: 850;
+}
+
+.portal-sidebar a.active:hover {
+  background: linear-gradient(
+    135deg,
+    var(--as-primary),
+    var(--as-primary-dark)
+  );
+  color: #ffffff;
 }
 
 /* ==========================================
-   CONTENT
+   CONTENT (THE ONLY SCROLLABLE AREA)
 ========================================== */
-
 .portal-content {
   flex: 1;
   padding: 28px;
-  overflow-y: auto;
+  overflow-y: auto; /* Handles vertical page overflows gracefully */
+  overflow-x: hidden; /* Guards layout grid breaking points */
+  height: 100%;
+  box-sizing: border-box;
 }
 
 /* ==========================================
    FOOTER
 ========================================== */
-
 .portal-footer {
   background: #ffffff;
   border-top: 1px solid #e7efe9;
@@ -180,12 +236,12 @@
   text-align: center;
   color: #64748b;
   font-size: 0.82rem;
+  flex-shrink: 0; /* Guards footer visibility from getting squeezed */
 }
 
 /* ==========================================
    SCROLLBAR
 ========================================== */
-
 .portal-content::-webkit-scrollbar {
   width: 8px;
 }
@@ -200,9 +256,8 @@
 }
 
 /* ==========================================
-   MOBILE
+   MOBILE RESPONSIVENESS
 ========================================== */
-
 @media (max-width: 992px) {
   .portal-sidebar {
     display: none;
@@ -219,4 +274,57 @@
   .customer-pill span {
     display: none;
   }
+}
+/* ==========================================
+   CUSTOMER PILL CUSTOM TOOLTIP (BOTTOM)
+========================================== */
+
+/* 1. Establish absolute positioning context */
+.customer-pill.custom-tooltip-container {
+  position: relative;
+}
+
+/* 2. Tooltip structure and theme design - Adjusted for Bottom placement */
+.custom-tooltip {
+  position: absolute;
+  top: 125%; /* Positions the tooltip bubble safely BELOW the pill */
+  left: 50%;
+  transform: translateX(-50%) scale(0.95);
+  background-color: #1f2937; /* Dark charcoal/slate background */
+  color: #ffffff;
+  padding: 8px 14px;
+  border-radius: 8px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  white-space: nowrap;
+  box-shadow:
+    0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -4px rgba(0, 0, 0, 0.1);
+  z-index: 1000; /* Stacks nicely over the rest of the portal layout */
+
+  /* Smooth transition engine */
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* 3. Small pointer arrow resting perfectly on the bottom edge of the pill */
+.custom-tooltip::after {
+  content: "";
+  position: absolute;
+  bottom: 100%; /* Ties it to the TOP baseline of the tooltip bubble */
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 6px;
+  border-style: solid;
+  /* Flips the arrow direction to point upwards */
+  border-color: transparent transparent #1f2937 transparent;
+}
+
+/* 4. Trigger state on hover */
+.customer-pill.custom-tooltip-container:hover .custom-tooltip {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) scale(1);
 }

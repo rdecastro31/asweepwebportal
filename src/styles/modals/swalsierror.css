@@ -1,0 +1,86 @@
+/* Container Backdrop Overlay */
+.swal-si-container {
+  background: rgba(15, 23, 42, 0.3) !important;
+  backdrop-filter: blur(4px);
+  z-index: 2000 !important;
+}
+
+/* Panel Body Customization matching .invoice-modal-panel aesthetic */
+.swal-si-popup {
+  background: #ffffff !important;
+  border-radius: 22px !important;
+  padding: 32px !important;
+  border: 1px solid #edf2ef !important;
+  box-shadow: 0 20px 48px rgba(15, 23, 42, 0.08) !important;
+  width: 100% !important;
+  max-width: 460px !important;
+  font-family: inherit !important;
+  animation: swalSiSlideUp 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Reset inner spaces */
+.swal-si-html-container {
+  padding: 0 !important;
+  margin: 0 !important;
+  text-align: left !important;
+}
+
+/* Layout Content Frame */
+.si-error-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.si-error-header h2 {
+  font-size: 1.3rem;
+  font-weight: 850;
+  color: #1e293b;
+  margin: 0 0 6px 0;
+}
+
+.si-error-header p {
+  font-size: 0.88rem;
+  color: #64748b;
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* Custom Action Button Matching var(--as-primary) structures */
+.swal-si-actions {
+  margin-top: 24px !important;
+  width: 100% !important;
+}
+
+.swal-si-confirm-btn {
+  height: 46px;
+  border: 0;
+  border-radius: 14px;
+  padding: 0 18px;
+  background: #dc2626 !important; /* Emphasized Error Red */
+  color: #ffffff !important;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.88rem;
+  font-weight: 850;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  width: 100% !important;
+  box-shadow: none !important;
+}
+
+.swal-si-confirm-btn:hover {
+  background: #b91c1c !important;
+}
+
+@keyframes swalSiSlideUp {
+  from {
+    transform: translateY(12px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}

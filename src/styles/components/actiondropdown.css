@@ -1,0 +1,136 @@
+/* ==========================================================
+   📦 ACTION DROPDOWN COMPONENT STYLES
+   ========================================================== */
+
+/* The outer boundary tracking relative positions */
+.action-dropdown-container {
+  position: relative;
+  display: inline-block;
+  justify-self: end; /* Ensures right-alignment if placed inside a grid */
+}
+
+/* The round/squircle kebab toggle button */
+.kebab-menu-btn {
+  border: 0;
+  background: #f1f5f9;
+  color: #334155;
+  width: 38px;
+  height: 38px;
+  border-radius: 12px;
+  font-size: 1.15rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+/* Active and Hover states for the toggle trigger */
+.kebab-menu-btn:hover,
+.kebab-menu-btn[aria-expanded="true"] {
+  background: #228d45; /* Matches your --as-primary color */
+  color: #ffffff;
+}
+
+/* The absolute floating container overlay */
+.dropdown-context-menu {
+  position: absolute;
+  right: 0;
+  background: #ffffff;
+  border: 1px solid #e5e7eb; /* Matches your --as-border */
+  border-radius: 14px;
+  box-shadow:
+    0 10px 25px -5px rgba(15, 23, 42, 0.12),
+    0 8px 16px -6px rgba(15, 23, 42, 0.08);
+  padding: 6px;
+  min-width: 170px;
+  z-index: 100;
+}
+
+/* ↕️ Position handling modifiers */
+.dropdown-context-menu.is-down {
+  top: calc(100% + 6px);
+  animation: dropdownFadeInDown 0.15s ease-out;
+}
+
+.dropdown-context-menu.is-up {
+  bottom: calc(100% + 6px);
+  animation: dropdownFadeInUp 0.15s ease-out;
+}
+
+/* Micro-interaction animation for unfolding menus */
+@keyframes dropdownFadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes dropdownFadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Individual action buttons within the dropdown */
+.dropdown-context-menu button {
+  width: 100%;
+  border: 0;
+  background: transparent;
+  padding: 10px 12px;
+  border-radius: 10px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #1e293b; /* Matches your --as-text */
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  text-align: left;
+  transition: background 0.15s ease;
+}
+
+/* Icons inside individual standard action items */
+.dropdown-context-menu button svg {
+  font-size: 1rem;
+  color: #64748b; /* Matches your --as-muted */
+  flex-shrink: 0;
+}
+
+/* Row-level hovers */
+.dropdown-context-menu button:hover {
+  background: #f8fafc; /* Matches your --as-bg-soft */
+}
+
+.dropdown-context-menu button:hover svg {
+  color: #228d45; /* Matches your --as-primary */
+}
+
+/* Horizontal line custom separator spacing */
+.dropdown-context-menu .dropdown-divider {
+  border: 0;
+  border-top: 1px solid #e5e7eb;
+  margin: 4px 6px;
+}
+
+/* ⚠️ Custom Destructive UI Styling Modifiers */
+.dropdown-context-menu button.is-destructive {
+  color: #dc2626; /* Matches your --as-danger */
+}
+
+.dropdown-context-menu button.is-destructive svg {
+  color: #dc2626;
+}
+
+.dropdown-context-menu button.is-destructive:hover {
+  background: #fef2f2; /* Soft red alert layout background tint */
+}

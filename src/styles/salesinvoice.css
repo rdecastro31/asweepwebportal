@@ -1,0 +1,698 @@
+/* ==========================================================================
+   Sales Invoices (SI) Page Architecture Styling Definitions
+   ========================================================================== */
+
+.si-hero-banner {
+  background: linear-gradient(
+    135deg,
+    var(--as-primary),
+    var(--as-primary-dark)
+  );
+  color: #ffffff;
+  border-radius: 24px;
+  padding: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+  box-shadow: 0 18px 40px rgba(30, 94, 50, 0.12);
+  margin-bottom: 20px;
+}
+
+.si-hero-badge {
+  background: rgba(255, 255, 255, 0.15);
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.si-hero-banner h1 {
+  margin: 12px 0 6px 0;
+  font-size: 2.1rem;
+  font-weight: 900;
+}
+
+.si-hero-banner p {
+  margin: 0;
+  color: #e2f2e7;
+  max-width: 650px;
+  line-height: 1.6;
+}
+
+.si-hero-icon svg {
+  width: 64px;
+  height: 64px;
+  color: rgba(255, 255, 255, 0.25);
+}
+
+/* ==========================================================================
+   Control Filter Matrix Panel
+   ========================================================================== */
+.si-filter-panel {
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 24px;
+  border: 1px solid #edf2ef;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.03);
+  margin-bottom: 20px;
+}
+
+.si-filter-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr) auto;
+  gap: 16px;
+  align-items: flex-end;
+}
+
+.si-input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.si-input-group label {
+  font-size: 0.82rem;
+  font-weight: 800;
+  color: var(--as-text);
+}
+
+.si-date-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.si-field-icon {
+  position: absolute;
+  left: 14px;
+  color: var(--as-muted);
+  pointer-events: none;
+  font-size: 1rem;
+  z-index: 2;
+}
+
+.si-filter-grid input[type="date"] {
+  width: 100%;
+  padding: 12px 14px 12px 40px;
+  border: 1px solid var(--as-border);
+  border-radius: 12px;
+  background-color: var(--as-bg-soft);
+  color: var(--as-text);
+  font-size: 0.9rem;
+  font-weight: 600;
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+.si-filter-grid input[type="date"]:focus {
+  border-color: var(--as-primary);
+  background-color: #ffffff;
+  box-shadow: 0 0 0 4px rgba(34, 141, 69, 0.08);
+}
+
+.si-filter-grid input[type="date"]:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+  background-color: #f1f5f9;
+}
+
+.si-fetch-btn {
+  height: 46px;
+  border: 0;
+  background: var(--as-primary);
+  color: #ffffff;
+  padding: 0 24px;
+  border-radius: 12px;
+  font-weight: 850;
+  font-size: 0.9rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(34, 141, 69, 0.15);
+  transition: all 0.2s ease;
+}
+
+.si-fetch-btn:hover:not(:disabled) {
+  background: var(--as-primary-dark);
+  transform: translateY(-1px);
+}
+
+/* ==========================================================================
+   Core Datagrid Systems
+   ========================================================================== */
+.si-table-container {
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 24px;
+  border: 1px solid #edf2ef;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.02);
+}
+
+.si-table-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  gap: 16px;
+}
+
+.si-entries-layout {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.88rem;
+  color: var(--as-muted);
+  font-weight: 700;
+}
+
+.si-entries-select {
+  padding: 6px 10px;
+  border: 1px solid var(--as-border);
+  border-radius: 8px;
+  outline: none;
+  background-color: var(--as-bg-soft);
+  color: var(--as-text);
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.si-table-search-box-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 300px;
+  display: flex;
+  align-items: center;
+}
+
+.si-table-search-icon {
+  position: absolute;
+  left: 12px;
+  color: #a0aec0;
+  pointer-events: none;
+  font-size: 1.1rem;
+  display: flex;
+}
+
+.si-table-search-input {
+  width: 100%;
+  padding: 12px 14px 12px 42px;
+  border: 1px solid var(--as-border);
+  border-radius: 10px;
+  font-size: 0.85rem;
+  outline: none;
+  transition: all 0.2s ease;
+  background-color: #ffffff;
+  color: #334155;
+}
+
+.si-table-search-input::placeholder {
+  color: #94a3b8;
+  opacity: 1;
+}
+
+.si-table-search-input:focus {
+  border-color: var(--as-primary);
+  box-shadow: 0 0 0 3px rgba(34, 141, 69, 0.05);
+}
+
+.si-responsive-overflow {
+  width: 100%;
+  overflow-x: auto;
+  border: 1px solid var(--as-border);
+  border-radius: 12px;
+}
+
+.si-main-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 0.9rem;
+}
+
+.si-main-table th {
+  background-color: var(--as-bg-soft);
+  color: var(--as-muted);
+  font-weight: 800;
+  padding: 16px 18px; /* Increased padding */
+  border-bottom: 1px solid var(--as-border);
+  user-select: none;
+}
+
+.si-sortable-th {
+  cursor: pointer;
+}
+
+.si-sortable-th:hover {
+  background-color: #f1f5f9;
+  color: var(--as-text);
+}
+
+.si-th-content {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.si-sort-arrows {
+  display: inline-flex;
+  flex-direction: column;
+  font-size: 0.65rem;
+  opacity: 0.4;
+}
+
+.si-sort-active {
+  color: var(--as-primary) !important;
+}
+
+.si-main-table td {
+  padding: 16px 18px; /* Increased cell structural padding */
+  border-bottom: 1px solid var(--as-border);
+  color: var(--as-text);
+  vertical-align: middle;
+}
+
+/* ==========================================================================
+   INLINE ACCORDION BREAKDOWN RULES WITH ADDED STRUCTURAL MARGIN/PADDING
+   ========================================================================== */
+
+.si-row-parent-expanded td {
+  background-color: #f8fafc !important;
+  border-bottom: none !important;
+}
+
+.si-action-btn {
+  border: 1px solid var(--as-border);
+  padding: 8px 14px; /* Enhanced internal whitespace */
+  border-radius: 8px;
+  font-size: 0.78rem;
+  font-weight: 800;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #ffffff;
+  transition: all 0.2s ease;
+}
+
+.si-action-btn.si-btn-primary {
+  color: var(--as-primary);
+  border-color: var(--as-border-green);
+}
+
+.si-action-btn.si-btn-primary:hover {
+  background-color: var(--as-primary);
+  color: #ffffff;
+}
+
+.si-action-btn.si-btn-active-toggle {
+  background-color: #475569;
+  color: #ffffff;
+  border-color: #475569;
+}
+
+.si-accordion-nested-row td {
+  padding: 0px;
+  background-color: #fdfdfd;
+}
+
+.si-accordion-wrapper {
+  padding: 24px 32px 32px 32px; /* Increased wrapper layout padding to solve tightness */
+  background-color: #f8fafc;
+  border-top: 1px dashed var(--as-border);
+  border-bottom: 2px solid #e2e8f0;
+  animation: siSlideIn 0.22s ease-out forwards;
+}
+
+.si-nested-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 18px; /* Added breathing margin below header */
+}
+
+.si-nested-header h5 {
+  margin: 0;
+  font-size: 0.88rem;
+  font-weight: 850;
+  color: #475569;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.si-nested-header span {
+  font-size: 0.82rem;
+  color: var(--as-muted);
+}
+
+.si-nested-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  overflow: hidden;
+  font-size: 0.85rem;
+  box-shadow: inset 0 2px 4px rgba(15, 23, 42, 0.01);
+  margin-top: 8px; /* Safe space allocation */
+}
+
+.si-nested-table th {
+  background-color: #f1f5f9 !important;
+  color: #64748b;
+  font-weight: 800;
+  padding: 16px 18px; /* Increased structural layout headers padding */
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.si-nested-table td {
+  padding: 16px 18px; /* Enhanced nested data items body content row spacing */
+  border-bottom: 1px solid #f1f5f9;
+  color: #334155;
+  background: #ffffff !important;
+  vertical-align: middle;
+}
+
+.si-nested-table tr:last-child td {
+  border-bottom: 0;
+}
+
+.si-nested-table tr:hover td {
+  background-color: #f8fafc !important; /* Gentle hover response effect */
+}
+
+.si-download-btn {
+  color: var(--as-muted);
+}
+
+.si-download-btn:hover {
+  background-color: #f1f5f9;
+  color: var(--as-text);
+}
+
+.si-action-btn:disabled,
+.si-action-btn.disabled,
+.si-download-btn:disabled,
+.si-download-btn.disabled {
+  opacity: 0.45; /* Dims the buttons uniformly */
+  cursor: not-allowed !important; /* Updates mouse pointer interaction feedback */
+  background-color: #f8fafc !important; /* Soft off-white flat background */
+  color: #94a3b8 !important; /* Muted gray slate for typography */
+  border-color: #e2e8f0 !important; /* Normalized light gray border boundary */
+  transform: none !important; /* Disables scaling actions or visual click effects */
+  box-shadow: none !important; /* Strips elevation shading profiles */
+  pointer-events: none; /* Prevents Javascript action dispatches from mouse clicks */
+}
+
+/* Hard reset to override hover effects on disabled primary items */
+.si-action-btn.si-btn-primary:disabled:hover,
+.si-action-btn.si-btn-primary.disabled:hover {
+  background-color: #f8fafc !important;
+  color: #94a3b8 !important;
+  border-color: #e2e8f0 !important;
+}
+
+/* Hard reset to override hover effects on disabled download items */
+.si-download-btn:disabled:hover,
+.si-download-btn.disabled:hover {
+  background-color: #f8fafc !important;
+  color: #94a3b8 !important;
+}
+
+/* Utility Design Blocks */
+.si-timestamp {
+  font-weight: 700;
+}
+
+.si-sub-time {
+  display: block;
+  font-size: 0.76rem;
+  color: var(--as-muted);
+  font-weight: 500;
+  margin-top: 2px;
+}
+
+.si-code-badge {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  background-color: var(--as-bg-soft);
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-size: 0.82rem;
+  color: #334155;
+  border: 1px solid #e2e8f0;
+}
+
+.si-uppercase {
+  text-transform: uppercase;
+}
+.si-text-right {
+  text-align: right;
+}
+.si-text-center {
+  text-align: center;
+}
+.si-justify-end {
+  justify-content: flex-end;
+}
+.si-weight-bold {
+  font-weight: 850;
+}
+.si-color-primary {
+  color: var(--as-primary);
+}
+
+.si-table-loading,
+.si-table-empty {
+  text-align: center;
+  padding: 40px !important;
+  color: var(--as-muted);
+  font-weight: 600;
+  background: var(--as-bg-soft);
+}
+
+/* ==========================================================================
+   Footer Summary & Pagination
+   ========================================================================== */
+.si-footer-summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 18px;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.si-tracker-text {
+  font-size: 0.84rem;
+  color: var(--as-muted);
+  font-weight: 700;
+}
+
+.si-pagination-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.si-page-arrow,
+.si-page-number {
+  height: 36px;
+  min-width: 36px;
+  padding: 0 6px;
+  border: 1px solid var(--as-border);
+  background-color: #ffffff;
+  color: var(--as-text);
+  font-weight: 700;
+  font-size: 0.85rem;
+  border-radius: 8px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  user-select: none;
+}
+
+.si-page-arrow:hover:not(:disabled),
+.si-page-number:hover {
+  background-color: var(--as-bg-soft);
+  border-color: var(--as-muted);
+}
+
+.si-page-number.si-active-page {
+  background-color: var(--as-primary);
+  color: #ffffff;
+  border-color: var(--as-primary);
+}
+
+.si-page-arrow:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  background-color: var(--as-bg-soft);
+}
+
+/* ==========================================================================
+   Responsive Breakpoints
+   ========================================================================== */
+@media (max-width: 992px) {
+  .si-filter-grid {
+    grid-template-columns: 1fr;
+  }
+  .si-fetch-btn {
+    width: 100%;
+  }
+  .si-table-toolbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .si-search-box {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 576px) {
+  .si-footer-summary {
+    flex-direction: column;
+    text-align: center;
+  }
+  .si-nested-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+}
+
+@keyframes siSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ==========================================================================
+   REACT DATEPICKER SYSTEM CONTAINER & UI OVERRIDES
+   ========================================================================== */
+.si-date-wrapper .react-datepicker-wrapper {
+  width: 100%;
+}
+
+.si-date-wrapper .react-datepicker__input-container input {
+  width: 100%;
+  padding: 12px 14px 12px 40px;
+  border: 1px solid var(--as-border);
+  border-radius: 12px;
+  background-color: var(--as-bg-soft);
+  color: var(--as-text);
+  font-size: 0.9rem;
+  font-weight: 600;
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+.si-date-wrapper .react-datepicker__input-container input:focus {
+  border-color: var(--as-primary);
+  background-color: #ffffff;
+  box-shadow: 0 0 0 4px rgba(34, 141, 69, 0.08);
+}
+
+.si-date-wrapper .react-datepicker__input-container input:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+  background-color: #f1f5f9;
+}
+
+.react-datepicker {
+  font-family: inherit !important;
+  border: 1px solid var(--as-border) !important;
+  border-radius: 12px !important;
+  box-shadow: 0 10px 25px rgba(15, 23, 42, 0.1);
+}
+
+.react-datepicker__header {
+  background-color: var(--as-bg-soft) !important;
+  border-bottom: 1px solid var(--as-border) !important;
+  border-top-left-radius: 12px !important;
+  border-top-right-radius: 12px !important;
+}
+
+.react-datepicker__day--selected,
+.react-datepicker__day--keyboard-selected {
+  background-color: var(--as-primary) !important;
+  color: #ffffff !important;
+  border-radius: 8px !important;
+}
+
+.react-datepicker__day:hover {
+  border-radius: 8px !important;
+}
+
+/* ==========================================================================
+   Table Skeleton Shimmer Loader System
+   ========================================================================== */
+@keyframes siShimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.si-skeleton-row td {
+  padding: 16px 18px; /* Perfectly matches your main table body spacing */
+  vertical-align: middle;
+}
+
+.si-skeleton-line {
+  height: 16px;
+  border-radius: 6px;
+  background: linear-gradient(
+    90deg,
+    var(--as-bg-soft) 25%,
+    #e2e8f0 50%,
+    var(--as-bg-soft) 75%
+  );
+  background-size: 200% 100%;
+  animation: siShimmer 1.6s infinite linear;
+  display: inline-block;
+}
+
+/* Row elements proportional match wrappers */
+.si-skeleton-badge {
+  width: 95px;
+  height: 24px;
+}
+
+.si-skeleton-text {
+  display: block;
+}
+.si-skeleton-text.short {
+  width: 70px;
+}
+.si-skeleton-text.medium {
+  width: 120px;
+}
+.si-skeleton-text.long {
+  width: 160px;
+}
+
+.si-skeleton-text.micro {
+  width: 50px;
+  height: 10px;
+  margin-top: 6px;
+}
+
+.si-skeleton-btn {
+  width: 82px;
+  height: 33px;
+  border-radius: 8px;
+}

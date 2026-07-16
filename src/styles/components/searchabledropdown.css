@@ -1,0 +1,163 @@
+/* ==========================================================================
+   SEARCHABLE DROPDOWN COMPONENT STYLES WITH LEFT ICON SUPPORT
+   ========================================================================== */
+
+.dropdown-wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.dropdown-wrapper label {
+  font-size: 0.8rem;
+  font-weight: 800;
+  color: var(--as-muted);
+  margin-bottom: 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.dropdown-field-relative {
+  position: relative;
+  width: 100%;
+}
+
+.dropdown-control-input {
+  width: 100%;
+  padding: 12px 40px 12px 14px; /* Default padding when no left icon exists */
+  border: 1px solid var(--as-border);
+  border-radius: 14px;
+  background-color: #ffffff;
+  font-size: 14px;
+  outline: none;
+  color: var(--as-text);
+  cursor: pointer;
+  box-sizing: border-box;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+/* Dynamically shift input padding rightwards if a left icon is present */
+.dropdown-field-relative.has-left-icon .dropdown-control-input {
+  padding-left: 42px;
+}
+
+.dropdown-control-input:focus {
+  border-color: rgba(34, 141, 69, 0.55);
+  box-shadow: 0 0 0 4px rgba(34, 141, 69, 0.08);
+}
+
+/* Left Icon Placement */
+.dropdown-left-icon {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #94a3b8;
+  font-size: 16px;
+  pointer-events: none;
+}
+
+/* Right Chevron Placement */
+.dropdown-icon-indicator {
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #94a3b8;
+  pointer-events: none;
+  transition: transform 0.2s ease;
+}
+
+.dropdown-wrapper.is-open .dropdown-icon-indicator {
+  transform: translateY(-50%) rotate(180deg);
+}
+
+.dropdown-menu-list {
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 0;
+  width: 100%;
+  background: #ffffff;
+  border: 1px solid #edf2ef;
+  border-radius: 14px;
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.1);
+  max-height: 240px;
+  overflow-y: auto;
+  z-index: 100;
+  padding: 6px;
+  box-sizing: border-box;
+}
+
+.dropdown-menu-list::-webkit-scrollbar {
+  width: 6px;
+}
+.dropdown-menu-list::-webkit-scrollbar-thumb {
+  background-color: #cbd5e1;
+  border-radius: 999px;
+}
+
+.dropdown-item-row {
+  width: 100%;
+  padding: 10px 12px;
+  border: 0;
+  background: transparent;
+  text-align: left;
+  font-size: 14px;
+  color: var(--as-text);
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.15s ease;
+  margin-bottom: 5px;
+}
+
+.dropdown-item-row:hover {
+  background: var(--as-primary-soft-2);
+  color: var(--as-primary-dark);
+}
+
+.dropdown-item-row.selected {
+  background: var(--as-primary-soft);
+  color: var(--as-primary-dark);
+  font-weight: 800;
+}
+
+.no-options-fallback {
+  padding: 12px;
+  text-align: center;
+  color: var(--as-muted);
+  font-size: 13px;
+}
+
+/* ==========================================================================
+   PAGINATION & LOADING INDICATORS
+   ========================================================================== */
+
+.dropdown-loading-more {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 12px;
+  font-size: 13px;
+  color: var(--as-muted, #64748b);
+  text-align: center;
+  border-top: 1px solid #f1f5f9;
+  margin-top: 4px;
+}
+
+.dropdown-spinner {
+  width: 14px;
+  height: 14px;
+  border: 2px solid #cbd5e1;
+  border-top-color: var(--as-primary, #228d45);
+  border-radius: 50%;
+  animation: dropdownSpin 0.6s linear infinite;
+}
+
+@keyframes dropdownSpin {
+  to {
+    transform: rotate(360deg);
+  }
+}

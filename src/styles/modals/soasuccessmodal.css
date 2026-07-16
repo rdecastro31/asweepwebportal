@@ -1,0 +1,202 @@
+/* Container Backdrop Overlay overrides */
+.swal-soa-container {
+  background: rgba(15, 23, 42, 0.3) !important;
+  backdrop-filter: blur(4px);
+}
+
+/* Panel Body overrides matching .soa-success-panel aesthetic */
+.swal-soa-popup {
+  background: #ffffff !important;
+  border-radius: 22px !important;
+  padding: 32px !important;
+  border: 1px solid #edf2ef !important;
+  box-shadow: 0 20px 48px rgba(15, 23, 42, 0.08) !important;
+  width: 100% !important;
+  max-width: 480px !important;
+  font-family: inherit !important;
+  animation: soaSuccessSlideUp 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Reset inner default sweetalert spaces */
+.swal-soa-html-container {
+  padding: 0 !important;
+  margin: 0 !important;
+  text-align: left !important;
+  overflow: visible !important;
+}
+
+/* Layout Header Styles inside Sweetalert */
+.soa-success-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.success-icon-wrapper {
+  color: var(--as-primary, #228d45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header-text-block h2 {
+  font-size: 1.4rem;
+  font-weight: 850;
+  color: var(--as-text);
+  margin: 0 0 6px 0;
+}
+
+.header-text-block p {
+  font-size: 0.88rem;
+  color: #64748b;
+  margin: 0;
+  line-height: 1.4;
+}
+
+/* Standardized Meta Summary placeholder styles */
+.account-info-badge-summary {
+  display: flex;
+  gap: 12px;
+  background: #f1f5f9;
+  padding: 10px 14px;
+  border-radius: 10px;
+  font-size: 0.85rem;
+  color: var(--as-text);
+  margin-bottom: 16px;
+}
+
+/* Information Notice Card Box */
+.soa-email-notice-card {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  padding: 16px;
+  display: flex;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.soa-email-notice-card .notice-icon {
+  color: var(--as-primary);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.soa-email-notice-card .notice-text p {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--as-text);
+  margin: 0 0 4px 0;
+}
+
+.soa-email-notice-card .notice-text span {
+  font-size: 0.82rem;
+  color: #64748b;
+  line-height: 1.4;
+  display: block;
+}
+
+/* Action block overrides */
+.swal-soa-actions {
+  display: flex !important;
+  flex-direction: row !important;
+  gap: 12px !important;
+  margin-top: 24px !important;
+  width: 100%;
+  justify-content: space-between;
+}
+
+/* Reset base Sweetalert margins on elements */
+.swal-soa-actions button {
+  margin: 0 !important;
+}
+
+/* Cancel Button Base -> Configured as View PDF button */
+.swal-soa-cancel-btn {
+  height: 46px;
+  border-radius: 14px;
+  padding: 0 16px;
+  background: #ffffff !important;
+  color: var(--as-text) !important;
+  border: 1px solid var(--as-border, #e2e8f0) !important;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-size: 0.88rem;
+  font-weight: 850;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.2s ease;
+  width: 100%;
+}
+
+.swal-soa-cancel-btn:hover {
+  background: #f8fafc !important;
+  border-color: #cbd5e1 !important;
+}
+
+/* Confirm Button Base -> Configured as Download button */
+.swal-soa-confirm-btn {
+  height: 46px;
+  border: 0;
+  border-radius: 14px;
+  padding: 0 18px;
+  background: var(--as-primary, #228d45) !important;
+  color: #ffffff !important;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-size: 0.88rem;
+  font-weight: 850;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.2s ease;
+  width: 100%;
+}
+
+.swal-soa-confirm-btn:hover {
+  background: var(--as-primary-dark, #1a6d34) !important;
+}
+
+/* Mobile Responsiveness Stack configuration */
+@media (max-width: 440px) {
+  .swal-soa-actions {
+    flex-direction: column !important;
+    gap: 10px !important;
+  }
+}
+
+/* Deny Button Style Definition - Clean neutral secondary look */
+.swal-soa-deny-btn {
+  height: 46px;
+  border-radius: 14px;
+  padding: 0 16px;
+  background: #f1f5f9 !important; /* Neutral slate highlight style background */
+  color: #64748b !important;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.88rem;
+  font-weight: 850;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.2s ease;
+  width: 100%;
+  border: 1px solid #e2e8f0 !important;
+}
+
+.swal-soa-deny-btn:hover {
+  background: #e2e8f0 !important;
+  color: var(--as-text) !important;
+}
+
+/* Ensure actions can accommodate three columns cleanly or stacks on small devices */
+@media (max-width: 520px) {
+  .swal-soa-actions {
+    flex-direction: column !important;
+    gap: 10px !important;
+  }
+}

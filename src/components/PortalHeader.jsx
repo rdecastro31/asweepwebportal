@@ -13,11 +13,22 @@ export default function PortalHeader({ customer, onLogout }) {
       </div>
 
       <div className="portal-header-actions">
-        <button className="header-icon-btn"><FiBell /></button>
+        {/* <button className="header-icon-btn"><FiBell /></button> */}
 
-        <div className="customer-pill">
+        <div className="customer-pill custom-tooltip-container">
           <FiUser />
-          <span>{customer?.fullname || "Customer"}</span>
+          <span>
+            {customer?.name
+              ? customer.name.length > 35
+                ? `${customer.name.substring(0, 35)}...`
+                : customer.name
+              : "Customer"}
+          </span>
+
+          {/* Custom Tooltip - Only breaks out to show if name is strictly over 35 characters */}
+          {customer?.name && customer.name.length > 35 && (
+            <span className="custom-tooltip">{customer.name}</span>
+          )}
         </div>
 
         <button className="logout-btn" onClick={onLogout}>

@@ -1,0 +1,221 @@
+/* Modal Context Overlay */
+.date-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(15, 23, 42, 0.3); /* Soft subtle dark overlay */
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  animation: dateFadeIn 0.2s ease-out;
+}
+
+/* Inherited Panel Aesthetic */
+.date-modal-panel {
+  position: relative;
+  background: #ffffff;
+  border-radius: 22px;
+  padding: 32px;
+  border: 1px solid #edf2ef;
+  box-shadow: 0 20px 48px rgba(15, 23, 42, 0.08);
+  width: 100%;
+  max-width: 520px; /* Slightly relaxed width layout to map datepicker panels cleanly */
+  margin: 20px;
+  animation: dateSlideUp 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Close button cross in the top-right corner */
+.date-modal-close-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: transparent;
+  border: 0;
+  color: var(--as-text);
+  opacity: 0.4;
+  cursor: pointer;
+  padding: 6px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.15s ease;
+}
+
+.date-modal-close-btn:hover {
+  opacity: 0.9;
+  background: #edf2ef;
+}
+
+/* Header Text Rules */
+.date-section-header h2 {
+  font-size: 1.4rem;
+  font-weight: 850;
+  color: var(--as-text);
+  margin: 0 0 6px 0;
+}
+
+.date-section-header p {
+  font-size: 0.88rem;
+  color: #64748b;
+  margin: 0;
+  line-height: 1.4;
+}
+
+/* Vertical Stack Layout */
+.date-form-vertical {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  margin-top: 24px;
+}
+
+.date-form-vertical .form-group-container {
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+}
+
+.date-form-vertical .form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+}
+
+.date-form-vertical label {
+  color: var(--as-text);
+  font-size: 0.82rem;
+  font-weight: 850;
+}
+
+/* ==========================================================================
+   REACT DATEPICKER MODAL SYSTEM OVERRIDES & INTEGRATION
+   ========================================================================== */
+.modal-date-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.modal-field-icon {
+  position: absolute;
+  left: 14px;
+  color: var(--as-muted);
+  pointer-events: none;
+  font-size: 1rem;
+  z-index: 2;
+}
+
+.modal-date-wrapper .react-datepicker-wrapper {
+  width: 100%;
+}
+
+/* Styled Inputs matching the SalesInvoice UI guidelines perfectly */
+.modal-date-wrapper .react-datepicker__input-container input {
+  width: 100%;
+  height: 46px;
+  border: 1px solid var(--as-border);
+  border-radius: 14px;
+  padding: 0 14px 0 40px;
+  color: var(--as-text);
+  background: #ffffff;
+  font-size: 0.9rem;
+  font-weight: 600;
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+.modal-date-wrapper .react-datepicker__input-container input:focus {
+  border-color: rgba(34, 141, 69, 0.55);
+  box-shadow: 0 0 0 4px rgba(34, 141, 69, 0.08);
+}
+
+.modal-date-wrapper .react-datepicker__input-container input:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+  background-color: #f1f5f9;
+}
+
+/* Datepicker Portal Overlay Customizer */
+.react-datepicker {
+  font-family: inherit !important;
+  border: 1px solid var(--as-border) !important;
+  border-radius: 12px !important;
+  box-shadow: 0 10px 25px rgba(15, 23, 42, 0.1);
+}
+
+.react-datepicker__header {
+  background-color: var(--as-bg-soft) !important;
+  border-bottom: 1px solid var(--as-border) !important;
+  border-top-left-radius: 12px !important;
+  border-top-right-radius: 12px !important;
+}
+
+.react-datepicker__day--selected,
+.react-datepicker__day--keyboard-selected {
+  background-color: var(--as-primary) !important;
+  color: #ffffff !important;
+  border-radius: 8px !important;
+}
+
+.react-datepicker__day:hover {
+  border-radius: 8px !important;
+}
+
+/* Action button stretched across modal width */
+.date-confirm-btn {
+  height: 46px;
+  border: 0;
+  border-radius: 14px;
+  padding: 0 18px;
+  background: var(--as-primary);
+  color: #ffffff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  font-size: 0.88rem;
+  font-weight: 850;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.2s ease;
+  width: 100%;
+  margin-top: 6px;
+}
+
+.date-confirm-btn:hover {
+  background: var(--as-primary-dark);
+  transform: translateY(-1px);
+}
+
+.date-confirm-btn:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Open Transitions */
+@keyframes dateFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes dateSlideUp {
+  from {
+    transform: translateY(12px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+  }
+}
